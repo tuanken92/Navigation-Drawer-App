@@ -266,8 +266,8 @@
                     Grid.Row="0"
                     Grid.Column="7"
                     BorderThickness="0"
-                    Style="{StaticResource Close_btn}"
-                    Click="CloseBtn_Click">
+                    Style="{StaticResource Minimize_btn}"
+                    Click="Minimize_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/closeBtn_default.png" />
                 </Button.Background>
@@ -278,8 +278,8 @@
                     Grid.Row="0"
                     Grid.Column="8"
                     BorderThickness="0"
-                    Style="{StaticResource Close_btn}"
-                    Click="CloseBtn_Click">
+                    Style="{StaticResource Maximize_btn}"
+                    Click="MaximizeBtn_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/closeBtn_default.png" />
                 </Button.Background>
