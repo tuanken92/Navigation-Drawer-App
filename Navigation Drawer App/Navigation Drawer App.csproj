@@ -35,6 +35,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors">
+      <HintPath>Dll\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf">
+      <HintPath>Dll\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -73,6 +83,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\DlgExitProgram.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,12 +113,16 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\Model\MyLib.cs" />
     <Compile Include="MVVM\ViewModel\ContactViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MessageViewModel.cs" />
     <Compile Include="MVVM\View\ContactView.xaml.cs">
       <DependentUpon>ContactView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\DlgExitProgram.xaml.cs">
+      <DependentUpon>DlgExitProgram.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -154,8 +172,18 @@
     <Resource Include="Assets\tgBtn_default.png" />
     <Resource Include="Assets\tgBtn_MouseOver.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="MVVM\Model\" />
+    <Resource Include="Assets\outline_close_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\outline_minimize_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\outline_fullscreen_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\BG_sw.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

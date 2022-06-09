@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Navigation_Drawer_App.MVVM.Model;
+using Navigation_Drawer_App.MVVM.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,12 +64,12 @@ namespace Navigation_Drawer_App
 
         private void Tg_Btn_Unchecked(object sender, RoutedEventArgs e)
         {
-            img_bg.Opacity = 1;
+            img_bg.Opacity = 0.2;
         }
 
         private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
         {
-            img_bg.Opacity = 0.3;
+            img_bg.Opacity = 0.1;
         }
 
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -77,24 +79,37 @@ namespace Navigation_Drawer_App
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            DlgExitProgram dlgExitPrg = new DlgExitProgram();
+            dlgExitPrg.Owner = this;
+            dlgExitPrg.Topmost = true;
+            dlgExitPrg.ShowDialog();
+
+            if (dlgExitPrg.DlgResult)
+            { Close(); }
+
         }
 
         private void MaximizeBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (this.WindowState == System.Windows.WindowState.Normal)
+            if (WindowState == WindowState.Normal)
             {
-                this.WindowState = System.Windows.WindowState.Maximized;
+                WindowState = WindowState.Maximized;
             }
             else
             {
-                this.WindowState = System.Windows.WindowState.Normal;
+                WindowState = WindowState.Normal;
             }
         }
 
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
-            this.WindowState = System.Windows.WindowState.Minimized;
+            WindowState = WindowState.Minimized;
+
+        }
+
+        private void Title_and_button_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

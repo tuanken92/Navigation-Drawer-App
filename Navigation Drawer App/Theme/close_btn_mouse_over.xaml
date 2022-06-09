@@ -2,7 +2,14 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--// App Close Button Style Template //-->
     <ImageBrush x:Key="CloseBtn_MouseOver"
-                ImageSource="pack://application:,,,/Assets/closeBtn_MouseOver.png" />
+                ImageSource="pack://application:,,,/Assets/outline_close_white_24dp.png" />
+
+    <ImageBrush x:Key="MaximumBtn_MouseOver"
+                ImageSource="pack://application:,,,/Assets/outline_fullscreen_white_24dp.png" />
+
+    <ImageBrush x:Key="MinimumBtn_MouseOver"
+                ImageSource="pack://application:,,,/Assets/outline_minimize_white_24dp.png" />
+
     <Style x:Key="Close_btn"
            TargetType="{x:Type Button}">
         <Setter Property="Template">
@@ -18,6 +25,11 @@
                             <Setter Property="Background"
                                     TargetName="button"
                                     Value="{StaticResource CloseBtn_MouseOver}" />
+
+                            <Setter Property="BorderThickness" TargetName="button" Value="1.5" />
+                            <Setter Property="BorderBrush" TargetName="button" Value="AliceBlue" />
+                            <Setter Property="CornerRadius" TargetName="button" Value="7" />
+
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -39,7 +51,12 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="button"
-                                    Value="{StaticResource CloseBtn_MouseOver}" />
+                                    Value="{StaticResource MaximumBtn_MouseOver}" />
+
+                            <Setter Property="BorderThickness" TargetName="button" Value="1.5" />
+                            <Setter Property="BorderBrush" TargetName="button" Value="AliceBlue" />
+                            <Setter Property="CornerRadius" TargetName="button" Value="7" />
+
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -61,7 +78,13 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="button"
-                                    Value="{StaticResource CloseBtn_MouseOver}" />
+                                    Value="{StaticResource MinimumBtn_MouseOver}" />
+                        
+                            <Setter Property="BorderThickness" TargetName="button" Value="1.5" />
+                            <Setter Property="BorderBrush" TargetName="button" Value="AliceBlue" />
+                            <Setter Property="CornerRadius" TargetName="button" Value="7" />
+
+                        
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

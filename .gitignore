@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Navigation Drawer App/Dll/Cognex.InSight.Controls.Display.dll
+/Navigation Drawer App/Dll/Cognex.InSight.dll
+/Navigation Drawer App/Dll/McProtocol.dll
+/Navigation Drawer App/Dll/OpenCvSharp.dll
+/Navigation Drawer App/Dll/OpenCvSharp.Extensions.dll

@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="John Nguyen" 
         Height="600" 
-        Width="800"
+        Width="850"
         Topmost="True"
         Background="Black"
         WindowStyle="None"
@@ -20,13 +20,22 @@
     </Window.DataContext>
     <Grid x:Name="BG"
           PreviewMouseLeftButtonDown="BG_PreviewMouseLeftButtonDown">
-        
+        <!--<Border Grid.Row="1" Grid.ColumnSpan="2">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3F6C82" Offset="0" />
+                    <GradientStop Color="#2E333A" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>-->
         <!--#region backgroud for grid-->
         <Grid.Background>
             <ImageBrush x:Name="img_bg"
-                        ImageSource="Assets/img_background.png"
+                        ImageSource="Assets/BG_sw.jpg"
+                        Opacity="0.7"
                         Stretch="Fill" />
         </Grid.Background>
+
         <!--#endregion-->
         
         <Grid.ColumnDefinitions>
@@ -239,63 +248,61 @@
         
         <!--#Logo and button control GUI-->
         <Grid x:Name="Title_and_button"
+              MouseDown="Title_and_button_MouseDown"
+              Background="Transparent"
               Grid.Row="0"
               Grid.Column="1"
               VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="John Nguyen"
-                       Foreground="Yellow"
-                       HorizontalAlignment="Center"
+            
+            <TextBlock Text="Tân Hưng Hà"
+                       Foreground="LightBlue"
+                       HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        FontSize="30"
-                       Grid.ColumnSpan="10"></TextBlock>
-            <Button x:Name="MinimizeBtn"
+                       Margin="20,0,0,0"
+                       Grid.Column="0"></TextBlock>
+            
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right
+                        ">
+
+                <Button x:Name="MinimizeBtn"
                     Height="40"
                     Width="40"
-                    Grid.Row="0"
-                    Grid.Column="7"
-                    BorderThickness="0"
+                    Margin="0,0,10,0"
                     Style="{StaticResource Minimize_btn}"
                     Click="Minimize_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="Assets/closeBtn_default.png" />
-                </Button.Background>
-            </Button>
-            <Button x:Name="MaximizeBtn"
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/outline_minimize_white_24dp.png" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="MaximizeBtn"
                     Height="40"
                     Width="40"
-                    Grid.Row="0"
-                    Grid.Column="8"
-                    BorderThickness="0"
+                        Margin="0,0,10,0"
                     Style="{StaticResource Maximize_btn}"
                     Click="MaximizeBtn_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="Assets/closeBtn_default.png" />
-                </Button.Background>
-            </Button>
-            <Button x:Name="CloseBtn"
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/outline_fullscreen_white_24dp.png" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="CloseBtn"
                     Height="40"
                     Width="40"
-                    Grid.Row="0"
-                    Grid.Column="9"
-                    BorderThickness="0"
+                        
                     Style="{StaticResource Close_btn}"
                     Click="CloseBtn_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="Assets/closeBtn_default.png" />
-                </Button.Background>
-            </Button>
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/outline_close_white_24dp.png" />
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+            
         </Grid>
         <!--#endregion-->
         
