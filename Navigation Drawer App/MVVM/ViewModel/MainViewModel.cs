@@ -12,10 +12,14 @@ namespace Navigation_Drawer_App.MVVM.ViewModel
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand ContactViewCommand { get; set; }
         public RelayCommand MessageCommand { get; set; }
+        public RelayCommand SettingCommand { get; set; }
+        public RelayCommand SignOutCommand { get; set; }
+
 
         public HomeViewModel HomeVM { get; set; }
         public ContactViewModel ContactVM { get; set; }
         public MessageViewModel MessageVM { get; set; }
+        public SettingViewModel SettingVM { get; set; }
 
         private object _currentView;
         public object CurrentView
@@ -32,6 +36,7 @@ namespace Navigation_Drawer_App.MVVM.ViewModel
             HomeVM = new HomeViewModel();
             ContactVM = new ContactViewModel();
             MessageVM = new MessageViewModel();
+            SettingVM = new SettingViewModel();
 
             CurrentView = HomeVM;
 
@@ -45,6 +50,15 @@ namespace Navigation_Drawer_App.MVVM.ViewModel
 
             MessageCommand = new RelayCommand(o => {
                 CurrentView = MessageVM;
+            });
+
+
+            SettingCommand = new RelayCommand(o => {
+                CurrentView = SettingVM;
+            });
+
+            SignOutCommand = new RelayCommand(o => {
+                CurrentView = HomeVM;
             });
 
         }

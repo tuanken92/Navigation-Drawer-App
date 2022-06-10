@@ -30,6 +30,10 @@
                 <view:MessageView></view:MessageView>
             </DataTemplate>
             
+            <DataTemplate DataType="{x:Type viewModel:SettingViewModel}">
+                <view:SettingView></view:SettingView>
+            </DataTemplate>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

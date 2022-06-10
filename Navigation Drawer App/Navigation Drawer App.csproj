@@ -80,8 +80,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MVVM\View\ContactView.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MVVM\View\DlgExitProgram.xaml">
       <SubType>Designer</SubType>
@@ -92,6 +92,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\MessageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\SettingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVVM\Model\MyLib.cs" />
+    <Compile Include="MVVM\ViewModel\SettingViewModel.cs" />
     <Compile Include="MVVM\ViewModel\ContactViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
@@ -129,6 +134,9 @@
     </Compile>
     <Compile Include="MVVM\View\MessageView.xaml.cs">
       <DependentUpon>MessageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

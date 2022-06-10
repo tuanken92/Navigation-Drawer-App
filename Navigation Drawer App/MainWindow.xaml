@@ -7,9 +7,9 @@
         xmlns:viewModel="clr-namespace:Navigation_Drawer_App.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="John Nguyen" 
-        Height="600" 
-        Width="850"
-        Topmost="True"
+        Height="800" 
+        Width="1200"
+        Topmost="False"
         Background="Black"
         WindowStyle="None"
         ResizeMode="NoResize"
@@ -202,7 +202,8 @@
                         </Grid>
                     </RadioButton>
                     <RadioButton Style="{StaticResource MenuButtonTheme}"
-                                 ToolTip="Setting">
+                                 ToolTip="Setting"
+                                 Command="{Binding SettingCommand}">
                         <Grid Width="230">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -219,6 +220,7 @@
                         </Grid>
                     </RadioButton>
                     <RadioButton Style="{StaticResource MenuButtonTheme}"
+                                    Command="{Binding SignOutCommand}"
                                  ToolTip="Sign Out">
                         <RadioButton.Content>
                             <Grid Width="230">

@@ -4,9 +4,256 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Navigation_Drawer_App.MVVM.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="Home View" Foreground="Wheat"></TextBlock>
-    </Grid>
+             d:DesignHeight="700" d:DesignWidth="1000">
+    <Border Padding="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--<StackPanel Grid.Row="0">-->
+            <!-- Buttons -->
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="1.2*" />
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel Grid.Column="0" Height="Auto" VerticalAlignment="Top"
+                            Margin="0,20,0,0">
+                    <Grid>
+                        <Grid.RowDefinitions >
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                    </Grid>
+
+                    <TextBlock 
+                        Text="Devices Status"
+                        Foreground="White"
+                        FontSize="20"
+                        FontStyle="Italic"
+                        Margin="0,0,0,10"
+                        ></TextBlock>
+
+                    <StackPanel Grid.Row="0" 
+                                    Orientation="Horizontal"
+                                    Margin="0,0,0,50"
+                                    >
+
+
+                        <Button 
+                            x:Name="ScannerStatus"
+                            Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                            Margin="0,0,10,0"
+                            ToolTip="Scanner Status"
+                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                            <materialDesign:PackIcon
+                            Kind="BarcodeScan"
+                            Height="24"
+                            Width="24" />
+                        </Button>
+
+                        <Button 
+                            x:Name="PrinterStatus"
+                            Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                            Margin="0,0,10,0"
+                            ToolTip="Printer Status"
+                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                            <materialDesign:PackIcon
+                            Kind="Printer"
+                            Height="24"
+                            Width="24" />
+                        </Button>
+
+
+                        <Button 
+                            x:Name="ServerStatus"
+                            Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                            ToolTip="Server Status"
+                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                            <materialDesign:PackIcon
+                            Kind="ServerNetwork"
+                            Height="24"
+                            Width="24" />
+                        </Button>
+                    </StackPanel>
+
+                    <!--Barcode data-->
+                    <TextBlock 
+                        Text="Barcode Data"
+                        Foreground="White"
+                        FontSize="20"
+                        FontStyle="Italic"
+                        Margin="0,0,0,10"
+                        ></TextBlock>
+
+                    <StackPanel Grid.Row="1" 
+                                Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                
+                                >
+                        <Button
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        ToolTip="Main PCB"
+                        materialDesign:RippleAssist.Feedback="#DD000000"
+                        Content="Main"
+                        Width="Auto"
+                        MinWidth="180"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                        <TextBox
+                        x:Name="MainTextBox"
+                        Height="Auto"
+                            Width="Auto"
+                            MinWidth="400"
+                            Margin="10"
+                        FontSize="18"
+                            
+                        Foreground="LightBlue"
+                        materialDesign:HintAssist.Hint="Data barcode on Main PCB">
+                        </TextBox>
+                    </StackPanel>
+
+
+                    <StackPanel Grid.Row="2" 
+                                Orientation="Horizontal"
+                                VerticalAlignment="Center">
+                        <Button
+
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        ToolTip="Front PCB"
+                        materialDesign:RippleAssist.Feedback="#DD000000"
+                        Content="Front"
+                            Width="Auto"
+                        MinWidth="180"
+                        
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                        <TextBox
+                        x:Name="FontTextBox"
+                        Margin="10"
+                        Height="Auto"
+                            Width="Auto"
+                            MinWidth="400"
+                        FontSize="18"
+                        Foreground="LightBlue"
+                        materialDesign:HintAssist.Hint="Data barcode on Font PCB"
+                        >
+
+                        </TextBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Orientation="Horizontal">
+                        <Button
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        ToolTip="Status"
+                        materialDesign:RippleAssist.Feedback="#DD000000"
+                        Content="Status"
+                        MinWidth="180"
+                        
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                        <TextBlock
+                        x:Name="Status"
+                        Margin="10"
+                        Height="Auto"
+                        Width="Auto"
+                        MinWidth="400"
+                        FontSize="18"
+                        Foreground="LightBlue"
+                        Text="Status"
+                        materialDesign:HintAssist.Hint="Status"
+                        >
+
+                        </TextBlock>
+                    </StackPanel>
+
+
+
+
+                </StackPanel>
+
+
+
+
+
+                <StackPanel Grid.Column="2">
+                    <Image 
+                        MinWidth="200" 
+                        MinHeight="200" 
+                        Margin="0,50,0,30"
+                        Source="/Assets/img_home.png"
+                        Stretch="None"
+                    >
+                    </Image>
+                    <Button
+                        x:Name="PrintLabelButton"
+                        Width="200"
+                        Margin="0,20,0,100"
+                      Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        
+                      ToolTip="Re-print label"
+                      Content="Print"
+                      IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                </StackPanel>
+
+            </Grid>
+
+
+
+
+
+
+            <!--</StackPanel>-->
+
+
+            <StackPanel Grid.Row="1">
+
+                <CheckBox
+                x:Name="EnableLog"
+                Content="Program Log" 
+                FontSize="20"
+                FontStyle="Italic"
+                Foreground="White"
+                >
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.0" ScaleY="1" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+
+                <ListView
+                Height="Auto"
+                MinHeight="200"
+                IsEnabled="{Binding Path=IsChecked, ElementName=EnableLog}"
+                ItemsSource="{Binding Items1}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn
+                            Width="200"
+                            DisplayMemberBinding="{Binding Code}"
+                            Header="Time" />
+                            <GridViewColumn
+                             Width="200"
+                            DisplayMemberBinding="{Binding Name}"
+                            Header="Type" />
+                            <GridViewColumn
+                             Width="Auto"
+                            DisplayMemberBinding="{Binding Description}"
+                            Header="Description" />
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+
+        </Grid>
+
+    </Border>
 </UserControl>
