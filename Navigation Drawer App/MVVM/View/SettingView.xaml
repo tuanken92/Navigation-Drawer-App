@@ -4,10 +4,627 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Navigation_Drawer_App.MVVM.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="Setting View"
-                   Foreground="Wheat"></TextBlock>
+             d:DesignHeight="700" d:DesignWidth="900">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!--Printer setting-->
+        <StackPanel Grid.Row="0" 
+                    Grid.Column="0" 
+                    Margin="10"
+                    >
+            <Grid HorizontalAlignment="Stretch"
+                  Background="#FF25A1B9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <materialDesign:PackIcon 
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    Kind="Printer"
+                    Foreground="AliceBlue"
+                    Width="24"
+                    Height="24"/>
+
+                <TextBlock Text="Printer"
+                           Grid.Column="1"
+                       FontSize="15"
+                       Height="25"
+                       Padding="10,0,0,0"
+                       FontWeight="Bold"
+                       FontStyle="Italic"
+                       Foreground="AliceBlue"></TextBlock>
+            </Grid>
+            
+            <StackPanel Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <!--Printer-->
+                    <Grid Grid.Row="0"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Center"
+                          Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--Printer-->
+
+                            <materialDesign:PackIcon
+                            Margin="0,0,20,0"
+                        Grid.Row="0"
+                        Kind="Printer"
+                                Foreground="AliceBlue"
+                        Width="32" Height="32"/>
+
+                            <TextBlock
+                                Width="Auto"
+                                Text="Printer Name"
+                                Grid.Column="1"
+                        Foreground="AliceBlue"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Paper width"
+                        materialDesign:HintAssist.HelperText="Paper width (mm)">
+                                
+                            </TextBlock>
+
+                        
+                    </Grid>
+
+                    <!--List Printer-->
+                    <StackPanel Grid.Row="1"
+                          HorizontalAlignment="Stretch"
+                          Margin="0,0,0,30">
+                        <ListBox>
+                            <TextBlock
+                                Text="Plain" />
+                            <TextBlock
+                                Text="Old" />
+                            <TextBlock
+                                Text="ListBox" />
+                            <TextBlock
+                                Text="Full of junk" />
+
+                        </ListBox>
+                    </StackPanel>
+
+                    <!--adjust code dimension-->
+                    <Grid Grid.Row="2"
+                          HorizontalAlignment="Right">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            x:Name="SetPrinterDefaultButton"
+                            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                            Width="Auto"
+                            ToolTip="Set to Default Printer"
+                            Content="Set Default"
+                            Margin="0,0,30,0"
+                          />
+
+                        <Button
+                            x:Name="TestPrinterDefaultButton"
+                            Grid.Column="1"
+                            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                            Width="Auto"
+                            ToolTip="Test Printer"
+                            Content="Test Print"
+                          />
+                    
+                    </Grid>
+
+
+                </Grid>
+            </StackPanel>
+            
+
+        </StackPanel>
+
+        <!--Label setting-->
+        <StackPanel Grid.Row="0" Grid.Column="1"  Margin="10">
+            <Grid HorizontalAlignment="Stretch"
+                  Background="#FF25A1B9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <materialDesign:PackIcon 
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    Kind="PaperRoll"
+                    Foreground="AliceBlue"
+                    Width="24"
+                    Height="24"/>
+
+                <TextBlock Text="Label"
+                           Grid.Column="1"
+                       FontSize="15"
+                       Height="25"
+                       Padding="10,0,0,0"
+                       FontWeight="Bold"
+                       FontStyle="Italic"
+                       Foreground="AliceBlue"></TextBlock>
+            </Grid>
+
+            <StackPanel Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        
+                    </Grid.RowDefinitions>
+
+                    <!--Paper dimension-->
+                    <Grid Grid.Row="0"
+                          HorizontalAlignment="Stretch"
+                          Margin="0,0,0,30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--Width-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="0">
+                            <materialDesign:PackIcon
+                            Margin="0,0,20,0"
+                        Grid.Row="0"
+                        Kind="Ruler"
+                        Foreground="{Binding 
+                                ElementName=PaperWidthTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="PaperWidthTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Paper width"
+                        materialDesign:HintAssist.HelperText="Paper width (mm)">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+
+                        <!--Height-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="1">
+                            <materialDesign:PackIcon
+                            Margin="0,0,20,0"
+                        Grid.Row="0"
+                        Kind="Ruler"
+                        Foreground="{Binding 
+                                ElementName=PaperHeightTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="PaperHeightTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Paper height"
+                        materialDesign:HintAssist.HelperText="Paper height (mm)">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+                    </Grid>
+
+                    <!--Code dimension-->
+                    <Grid Grid.Row="1"
+                          HorizontalAlignment="Stretch"
+                          Margin="0,0,0,30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <!--Width-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="0">
+                            <materialDesign:PackIcon
+                            Margin="0,0,20,0"
+                        Grid.Row="0"
+                        Kind="Ruler"
+                        Foreground="{Binding 
+                                ElementName=CodeWidthTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="CodeWidthTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Code width"
+                        materialDesign:HintAssist.HelperText="Code width (mm)">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+
+                        <!--Height-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="1">
+                            <materialDesign:PackIcon
+                            Margin="0,0,20,0"
+                        Grid.Row="0"
+                        Kind="Ruler"
+                        Foreground="{Binding 
+                                ElementName=CodeHeightTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="CodeHeightTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Code height"
+                        materialDesign:HintAssist.HelperText="Code height (mm)">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+                    </Grid>
+
+                    <!--adjust code dimension-->
+                    <Grid Grid.Row="2"
+                          HorizontalAlignment="Stretch"
+                          Margin="0,0,0,30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <!--Left-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="0">
+                            <materialDesign:PackIcon
+                        Grid.Row="0" Margin="0,0,20,0"
+                        Kind="FormatHorizontalAlignLeft"
+                        Foreground="{Binding 
+                                ElementName=CodeLeftTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="CodeLeftTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15" Width="50"
+                        materialDesign:HintAssist.Hint="Left"
+                        materialDesign:HintAssist.HelperText="Left (mm)">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+
+                        <!--Top-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="1">
+                            <materialDesign:PackIcon
+                        Grid.Row="0" Margin="0,0,20,0"
+                        Kind="FormatVerticalAlignTop"
+                        Foreground="{Binding 
+                                ElementName=CodeTopTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="CodeTopTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15" Width="50"
+                        materialDesign:HintAssist.Hint="Top"
+                        materialDesign:HintAssist.HelperText="Top(mm)">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        
+
+                        <!--Right-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="0">
+                            <materialDesign:PackIcon
+                        Margin="0,0,20,0"
+                        Kind="FormatHorizontalAlignRight"
+                        Foreground="{Binding 
+                                ElementName=CodeRightTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="CodeRightTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15" Width="50"
+                        materialDesign:HintAssist.Hint="Right"
+                        materialDesign:HintAssist.HelperText="Right (mm)">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+
+
+                        <!--Bot-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="1">
+                            <materialDesign:PackIcon
+                        Margin="0,0,20,0"
+                        Kind="FormatVerticalAlignBottom"
+                        Foreground="{Binding 
+                                ElementName=CodeBotTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="CodeBotTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15" Width="50"
+                        materialDesign:HintAssist.Hint="Bot"
+                        materialDesign:HintAssist.HelperText="Bot(mm)">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+
+
+        <!--SQL setting-->
+        <StackPanel Grid.Row="1" Grid.Column="1"  Margin="10">
+            <Grid HorizontalAlignment="Stretch"
+                  Background="#FF25A1B9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <materialDesign:PackIcon 
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    Kind="Server"
+                    Foreground="AliceBlue"
+                    Width="24"
+                    Height="24"/>
+
+                <TextBlock Text="Server"
+                           Grid.Column="1"
+                       FontSize="15"
+                       Height="25"
+                       Padding="10,0,0,0"
+                       FontWeight="Bold"
+                       FontStyle="Italic"
+                       Foreground="AliceBlue"></TextBlock>
+            </Grid>
+
+            <StackPanel Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <!--Server Adress-->
+                    <Grid Grid.Row="0"
+                          HorizontalAlignment="Stretch"
+                          Margin="0,0,0,30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--IP-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="0">
+                            <materialDesign:PackIcon
+                            Margin="0,0,20,0"
+                        Grid.Row="0"
+                        Kind="Ip"
+                        Foreground="{Binding 
+                                ElementName=IPServerTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="IPServerTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15" Width="150"
+                        materialDesign:HintAssist.Hint="Server IP"
+                        materialDesign:HintAssist.HelperText="IP Adress">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+
+                        <!--Route-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="1">
+                            <materialDesign:PackIcon
+                            Margin="0,0,20,0"
+                        Grid.Row="0"
+                        Kind="Routes"
+                        Foreground="{Binding 
+                                ElementName=ServerRouteTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="ServerRouteTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Route"
+                        materialDesign:HintAssist.HelperText="Route">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+                    </Grid>
+
+                    <!--Account Login-->
+                    <Grid Grid.Row="1"
+                          HorizontalAlignment="Stretch"
+                          Margin="0,0,0,30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <!--User-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="0">
+                            <materialDesign:PackIcon
+                            Margin="0,0,20,0"
+                        Grid.Row="0"
+                        Kind="Account"
+                        Foreground="{Binding 
+                                ElementName=AccountUserTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="AccountUserTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="User name"
+                        materialDesign:HintAssist.HelperText="User name">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+
+                        <!--Password-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="1">
+                            <materialDesign:PackIcon
+                            Margin="0,0,20,0"
+                        Grid.Row="0"
+                        Kind="Password"
+                        Foreground="{Binding 
+                                ElementName=AccountPasswordTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="AccountPasswordTextBox"
+                        Foreground="AliceBlue"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Password"
+                        materialDesign:HintAssist.HelperText="Password">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+                    </Grid>
+
+                    <!--OtherSetting-->
+                    <Grid Grid.Row="2"
+                          HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <!--Time out-->
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Column="0">
+                            <materialDesign:PackIcon
+                                Grid.Row="0"
+                                Margin="0,0,20,0"
+                                Kind="TimerSand"
+                                Foreground="{Binding 
+                                ElementName=CodeLeftTextBox, 
+                                Path=BorderBrush}" Width="32" Height="32"/>
+
+                            <TextBox
+                        x:Name="TimeoutConnectionTextBox"
+                                Width="100"
+                        Foreground="AliceBlue"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Timeout"
+                        materialDesign:HintAssist.HelperText="Timeout (ms)">
+                                <TextBox.Text>
+                                    <Binding
+                              Path="Name"
+                              UpdateSourceTrigger="PropertyChanged">
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </StackPanel>
+
+                        
+                    </Grid>
+
+
+                </Grid>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

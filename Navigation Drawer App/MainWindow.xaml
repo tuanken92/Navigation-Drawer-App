@@ -31,7 +31,7 @@
         <!--#region backgroud for grid-->
         <Grid.Background>
             <ImageBrush x:Name="img_bg"
-                        ImageSource="Assets/BG_sw.jpg"
+                        ImageSource="Assets/BG.jpg"
                         Opacity="0.7"
                         Stretch="Fill" />
         </Grid.Background>

@@ -180,7 +180,6 @@
     <Resource Include="Assets\tgBtn_default.png" />
     <Resource Include="Assets\tgBtn_MouseOver.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\outline_close_white_24dp.png" />
   </ItemGroup>
@@ -192,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\BG_sw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\BG.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
